@@ -9,29 +9,28 @@ int isShafe(int n,int arr[][n],int x,int y){
         }        
     }
     int row = x;
-        int col = y;
-        while (row>=0&&col>=0)
+    int col = y;
+    while (row>=0&&col>=0)
+    {
+        if (arr[row][col]==1)
         {
-            if (arr[row][col]==1)
-            {
-                return 0;
-            }
-            col--;
-            row--;
+            return 0;
         }
-
-        row =x;
-        col = y;
-        while (row>=0&&col<n)
+        col--;
+        row--;
+    }
+    row =x;
+    col = y;
+    while (row>=0&&col<n)
+    {
+        if (arr[row][col]==1)
         {
-            if (arr[row][col]==1)
-            {
-                return 0;
-            }
-            col++;
-            row--;
+            return 0;
         }
-        return 1;
+        col++;
+        row--;
+    }
+    return 1;
 }
 
 int nQueenPlacer(int n,int arr[][n],int x){
