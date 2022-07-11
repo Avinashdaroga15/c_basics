@@ -16,7 +16,7 @@ void lowerCase(char arr[]){
     
     for (int i = 0; i < strlen(arr); i++)
     {
-        if (arr[i]>=65&&arr[i]<+90)
+        if (arr[i]>=65&&arr[i]<=90)
         {
              arr[i] = arr[i]+32;
         }
@@ -25,21 +25,29 @@ void lowerCase(char arr[]){
     
 }
 void encryptor(char arr[]){
-    UpperCase(arr);
+    // UpperCase(arr);
     for (int i = 0; i < strlen(arr); i++)
     {
         int ascii = arr[i];
         int encryptedChar =ascii+3;
-        if (encryptedChar<=90)
+        // arr[i]=encryptedChar;
+        if (encryptedChar>=65 && encryptedChar<=90)
         {
             arr[i]=encryptedChar;
             // printf("%c",encryptedChar);
-        }else{
-            encryptedChar = encryptedChar%90+64;
+        }else if (encryptedChar>=91 && encryptedChar<=96)
+        {
+            encryptedChar = 64+encryptedChar%90;
             arr[i]=encryptedChar;
-            // printf("%c",encryptedChar);
+        }else if (encryptedChar>=97 && encryptedChar<=122)
+        {
+            arr[i]=encryptedChar;
+        }else{
+             encryptedChar = 96+encryptedChar%122;
+            arr[i]=encryptedChar;
         }
-        // printf("Ascii %d/n",string[i]);
+        
+        // printf("Ascii %d/n",arr[i]);
     }
     printf("%s\n",arr);
 }
@@ -49,15 +57,23 @@ void decryptor(char arr[]){
     {
         int ascii = arr[i];
         int encryptedChar =ascii-3;
-        if (encryptedChar<=90)
+        // arr[i]=encryptedChar;
+       if (encryptedChar>=65 && encryptedChar<=90)
         {
             arr[i]=encryptedChar;
             // printf("%c",encryptedChar);
-        }else{
-            encryptedChar = 64+encryptedChar%90;
+        }else if (encryptedChar<=64)
+        {
+            encryptedChar = 24+encryptedChar;
             arr[i]=encryptedChar;
-            // printf("%c",encryptedChar);
+        }else if (encryptedChar>=97 && encryptedChar<=122)
+        {
+            arr[i]=encryptedChar;
+        }else{
+             encryptedChar = encryptedChar+24;
+            arr[i]=encryptedChar;
         }
+        
         // printf("Ascii %d/n",string[i]);
     }
     // lowerCase(arr);
