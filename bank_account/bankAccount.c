@@ -19,15 +19,23 @@ int main(){
 
         printf("Welcome in Krsna's bank\nPlease deposit some money atleast 100rs and your account will be opened\nEnter ammount to be depsited:");
         scanf("%d",&depoMoney);
-        total=p= depoMoney;
-        printf("Enter withdrowal money:");
-        scanf("%d",&withdlMoney);
-        if (withdlMoney<=total)
-        {   
-            total-=withdlMoney;
-            printf("withdrwal is successful and Your remaining ammount is %.2lf\n",total);
+        if (depoMoney<100)
+        {
+            printf("Sorry, you can not open a/c with this amount\n");
         }else{
-            printf("Soory, you can not withrow entered money now because you have insuuficient money %.2lf\n",total);
+            total=p= depoMoney;
+            printf("Enter withdrowal money if you want to withdrow otherwise enter -1:");
+            scanf("%d",&withdlMoney);
+            if (withdlMoney==-1)
+            {
+                printf("Thank you for opening a/c in krsna's bank\n");
+            }else if(withdlMoney<=total)
+            {   
+                total-=withdlMoney;
+                printf("withdrwal is successful and Your remaining ammount is %.2lf\n",total);
+            }else{
+                printf("Soory, you can not withrow entered money now because you have insuuficient money %.2lf\n",total);
+            }
         }
     }
     
