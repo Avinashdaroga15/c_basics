@@ -6,8 +6,8 @@ int main(){
     int i=0;
 
     fptr = fopen("string.txt","r");
-    string[i]=fgetc(fptr);
     //entering string into an 1-d array
+    string[i]=fgetc(fptr);
     while (string[i]!= EOF)
     {
         i++;
