@@ -64,13 +64,13 @@ void decryptor(char arr[]){
             // printf("%c",encryptedChar);
         }else if (encryptedChar<=64)
         {
-            encryptedChar = 24+encryptedChar;
+            encryptedChar = 26+encryptedChar;
             arr[i]=encryptedChar;
         }else if (encryptedChar>=97 && encryptedChar<=122)
         {
             arr[i]=encryptedChar;
         }else{
-             encryptedChar = encryptedChar+24;
+             encryptedChar = encryptedChar+26;
             arr[i]=encryptedChar;
         }
         
