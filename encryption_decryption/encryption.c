@@ -1,29 +1,5 @@
 #include<stdio.h>
 #include<string.h>
-void UpperCase(char arr[]){
-    
-    for (int i = 0; i < strlen(arr); i++)
-    {
-        if (arr[i]>96&&arr[i]<+122)
-        {
-             arr[i] = arr[i]-32;
-        }
-    }
-    // printf("Upercase lattered string %s\n",arr);
-    
-}
-void lowerCase(char arr[]){
-    
-    for (int i = 0; i < strlen(arr); i++)
-    {
-        if (arr[i]>=65&&arr[i]<=90)
-        {
-             arr[i] = arr[i]+32;
-        }
-    }
-    // printf("lowercase lattered string %s\n",arr);
-    
-}
 void encryptor(char arr[]){
     // UpperCase(arr);
     for (int i = 0; i < strlen(arr); i++)

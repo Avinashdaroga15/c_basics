@@ -1,26 +1,26 @@
 #include<stdio.h>
 
 void maxiSubArr(int arr[],int size){
-    int currSum=1;
-    int maxSum=0;
+    int currPro=1;
+    int maxPro=0;
 
     for (int i = 0; i < size; i++)
     {
-        currSum*=arr[i];
+        currPro*=arr[i];
 
-        if (currSum>maxSum)
+        if (currPro>maxPro)
         {
-            maxSum = currSum;
+            maxPro = currPro;
             
         }
         
-        if (currSum<0)
+        if (currPro<0)
         {
-            currSum=1;
+            currPro=1;
         }
         
     }
-    printf("Maximum sum is %d\n",maxSum);
+    printf("Maximum sum is %d\n",maxPro);
     return 0;
 }
 int main(){
